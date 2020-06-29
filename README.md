@@ -40,4 +40,4 @@ resources:
       - type: 'custom:blind-control-card'
         entity: sensor.time
 ```
-* Restart the Home Assistant server.
+* Restart Home Assistant's server.
