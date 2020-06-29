@@ -876,6 +876,8 @@ class BlindControl extends LitElement {
       nbattery = parseInt("0x" + sensor.slice(14, 16)).toString();
       if (nbattery == "100") {
         nbattery = "99";
+      } else if(nbattery < 10) {
+        nbattery = "0" + nbattery;
       }
       nposition = position;
     } else if (id == "A7") {
