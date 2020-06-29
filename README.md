@@ -2,7 +2,9 @@
 Custom card for controlling the AM43 Blinds Drive Motor
 
 
-![](operation.gif)
+<p align="center">
+  <img width="460" height="300" src="operatino.png">
+</p>
 
 
 
