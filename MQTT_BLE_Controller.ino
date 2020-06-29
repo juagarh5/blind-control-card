@@ -6,9 +6,9 @@
 static BLEUUID serviceUUID("0000fe50-0000-1000-8000-00805f9b34fb");
 static BLEUUID    charUUID("0000fe51-0000-1000-8000-00805f9b34fb");
 
-const char* ssid        = "Dio schifoso";
-const char* password    = "porcodio";
-const char* mqtt_server = "192.168.1.103";
+const char* ssid        = "XXXX";
+const char* password    = "XXXX";
+const char* mqtt_server = "XXX.XXX.XXX.XXX";
 
 static boolean doConnect = false;
 static boolean connected = false;
