@@ -3,6 +3,9 @@
   <img src="https://github.com/juagarh5/blind-control-card/blob/master/examples/Interface.png?raw=true">
 </p>
 
+## Requirements:
+* ESP32 Microcontroller
+* A-OK AM43 Blind Motor [example](https://es.aliexpress.com/i/33044164435.html)
 ## Features:
 * Simple action execution such as go up, go down, stop.
 * Creation of 
