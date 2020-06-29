@@ -22,7 +22,7 @@
 https://dl.espressif.com/dl/package_esp32_index.json
 ```
 * Install the board esp32 by Espressif System through the Board Manager (Tools > Board > Board Manager).
-*
+* Select the ESP32 Dev Module Board (Tools > Board) and the Huge App partition scheme (Tools > Partition Scheme > Huge APP (3MB No OTA/1MB SPIFFS).
 
 ### Home Assistant
 
