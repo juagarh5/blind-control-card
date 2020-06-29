@@ -3,7 +3,7 @@ Custom card for controlling the AM43 Blinds Drive Motor
 
 
 <p align="center">
-  <img width="460" height="300" src="">
+  <img width="460" height="300" src="sources/example/interface.png">
 </p>
 
 
