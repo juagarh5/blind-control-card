@@ -7,12 +7,12 @@
 * ESP32 Microcontroller
 * A-OK AM43 Blind Motor [example](https://es.aliexpress.com/i/33044164435.html)
 ## Features:
-* Simple action execution such as go up, go down, stop.
-* Creation of 
-* Velocity and Direction modification.
-* Upper and Bottom limit modification.
-* Factory reset.
-* Battery and position notifications.
+* Execution of simple actions: go up, go down, stop.
+* Integration of daily scheduled movements (morning and night).
+* Parameters modification: Velocity (20-50 rpm), Direction (Forward-Reverse) modification.
+* Limits modification: Upper limit and Bottom limit.
+* Factory reset option.
+* Live battery-blind position status.
 
 ## Installation:
 
@@ -40,3 +40,4 @@ resources:
       - type: 'custom:blind-control-card'
         entity: sensor.time
 ```
+* Restart the Home Assistant server.
