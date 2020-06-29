@@ -1,8 +1,10 @@
 # blind-control-card
 Custom card for controlling the AM43 Blinds Drive Motor
 
+<p align="center">
+  ![](operation.gif)
+</p>
 
-![](operation.gif)
 
 
 
