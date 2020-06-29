@@ -1,0 +1,80 @@
+
+  - alias: 'Send MQTT Command'
+    trigger: 
+      - platform: state
+        entity_id: input_boolean.mqtt
+        to: 'on'
+    action:
+      - service: mqtt.publish
+        data:
+          topic: 'am43/commands'
+          payload_template: "{{ states('input_text.mqtt') }}"
+      - service: input_boolean.turn_off
+        data:
+          entity_id: input_boolean.mqtt
+
+  - alias: 'AM43 Morning Activation'
+    trigger: 
+      - platform: template
+        value_template: >
+         {% set d  = now().isoweekday()-1 %}
+         {% set s  = states('input_text.schedule') %}
+         {{ (s[14*d+2:14*d+4]+":"+s[14*d+4:14*d+6]) == (states('sensor.time')) }}
+    action:
+      - service: mqtt.publish
+        data:
+          topic: 'am43/commands'
+          payload_template: >
+           {% set d          = now().isoweekday()-1 %}
+           {% set s          = states('input_text.schedule') %}
+           {% set pd         = s[14*d+6:14*d+8] | int +1 %}
+           {% set ph         = '%0x' % pd %} 
+           {% set offsets    = [150,134,182,166,214,198,246] %}
+           {% set operations = [0,+1,-2,-1,-4,-3,-6,-5,+8,+9,+6,+7,+4,+5,+2,+3] %}
+         
+           {% set pcd = offsets[(pd//16)]+operations[16-(16*(pd//16 +1) - pd)] %}
+           {% set pch         = '%0x' % pcd %}
+
+           {% if pd < 16 %}
+              {{ "00ff00009a0d010"+ph+pch }}
+           {% elif pd > 15 %}
+              {{ "00ff00009a0d01"+ph+pch }}
+           {% endif %}
+      - service: input_text.set_value
+        data_template:
+          entity_id: input_text.notifications
+          value: "{{ states('input_text.notifications')[0:2] + states('input_text.schedule')[14*(now().isoweekday()-1)+6:14*(now().isoweekday()-1)+8] }}"
+
+  - alias: 'AM43 Night Activation'
+    trigger: 
+      - platform: template
+        value_template: >
+         {% set d  = now().isoweekday()-1 %}
+         {% set s  = states('input_text.schedule') %}
+         {{ (s[14*d+9:14*d+11]+":"+s[14*d+11:14*d+13]) == (states('sensor.time')) }}
+    action:
+      - service: mqtt.publish
+        data:
+          topic: 'am43/commands'
+          payload_template: >
+           {% set d          = now().isoweekday()-1 %}
+           {% set s          = states('input_text.schedule') %}
+           {% set pd         = s[14*d+13:14*d+15] | int +1 %}
+           {% set ph         = '%0x' % pd %} 
+           {% set offsets    = [150,134,182,166,214,198,246] %}
+           {% set operations = [0,+1,-2,-1,-4,-3,-6,-5,+8,+9,+6,+7,+4,+5,+2,+3] %}
+         
+           {% set pcd = offsets[(pd//16)]+operations[16-(16*(pd//16 +1) - pd)] %}
+           {% set pch         = '%0x' % pcd %}
+
+           {% if pd < 16 %}
+              {{ "00ff00009a0d010"+ph+pch }}
+           {% elif pd > 15 %}
+              {{ "00ff00009a0d01"+ph+pch }}
+           {% endif %}
+      - service: input_text.set_value
+        data_template:
+          entity_id: input_text.notifications
+          value: "{{ states('input_text.notifications')[0:2] + states('input_text.schedule')[14*(now().isoweekday()-1)+13:14*(now().isoweekday()-1)+15] }}"
+
+
