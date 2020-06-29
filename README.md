@@ -7,15 +7,18 @@
 </p>
 
 ## Features:
-* Poster and Fan Art views
-* All text can have its contents, color, and size customized.
-* Most design elements can be hidden or have their color changed.
-* 12 or 24 hour display for times and month/day or day/month for dates.
-* Indicator flag with customizable mdi icon and color.
-* Can limit the number of episodes/movies shown.
-* Uses responsive design to scale elegantly 
+* Simple action execution such as go up, go down, stop.
+* Creation of 
+* Velocity and Direction modification.
+* Upper and Bottom limit modification.
+* Factory reset.
+* Battery and position notifications.
 
 ## Installation:
+
+### ESP32
+
+### Home Assistant
 
 * Install the custom component by following it's instructions.
 
