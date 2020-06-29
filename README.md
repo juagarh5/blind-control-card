@@ -21,6 +21,8 @@
 ```
 https://dl.espressif.com/dl/package_esp32_index.json
 ```
+* Install the board esp32 by Espressif System through the Board Manager (Tools>Board>Board Manager).
+*
 
 ### Home Assistant
 
