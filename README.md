@@ -17,11 +17,11 @@
 ## Installation:
 
 ### ESP32
-* Add the following link to the File>Preferences: Additional Boards Manager URLs:
+* Add in the Additional Boards Manager URLs (File > Preferences) the following link:
 ```
 https://dl.espressif.com/dl/package_esp32_index.json
 ```
-* Install the board esp32 by Espressif System through the Board Manager (Tools>Board>Board Manager).
+* Install the board esp32 by Espressif System through the Board Manager (Tools > Board > Board Manager).
 *
 
 ### Home Assistant
