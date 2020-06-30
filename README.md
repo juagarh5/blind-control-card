@@ -28,12 +28,11 @@ https://dl.espressif.com/dl/package_esp32_index.json
 ### Home Assistant
 * Add the [configuration code](https://github.com/juagarh5/blind-control-card/blob/master/configuration_blind-control-card.yaml) into the Home Assistant's configuration.yaml file.
 * Add the [automation code](https://github.com/juagarh5/blind-control-card/blob/master/automations_blind-control-card.yaml) into the Home Assistant's automations.yaml file.
-* Create the folder www in the configuration folder and include the file [blind-control-card.js](https://github.com/juagarh5/blind-control-card/blob/master/blind-control-card.js) (Do not modify the name).
 * Load the resource in the LovelaceUI's Raw Configurator Editor:
 ```yaml
 resources:
   - type: module
-    url: /local/blind-control-card.js
+    url: /hacsfiles/blind-control-card/blind-control-card.js
 ```
 * Include the following code in "cards":
 ```yaml
