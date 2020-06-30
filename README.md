@@ -26,7 +26,7 @@ https://dl.espressif.com/dl/package_esp32_index.json
 * Download the [Arduino code](https://github.com/juagarh5/blind-control-card/blob/master/MQTT_BLE_Controller.ino) and introduce the network ssid, password and IP. Upload the code.
 
 ### Home Assistant
-* Add the [configuration code](https://github.com/juagarh5/blind-control-card/blob/master/configuration_blind-control-card.yaml) into the Home Assistant's configuration.yaml file.
+* Add the [configuration code](https://github.com/juagarh5/blind-control-card/blob/master/configuration_blind-control-card.yaml) after modifying the MQTT Broker's IP into the Home Assistant's configuration.yaml file.
 * Add the [automation code](https://github.com/juagarh5/blind-control-card/blob/master/automations_blind-control-card.yaml) into the Home Assistant's automations.yaml file.
 * Load the resource in the LovelaceUI's Raw Configurator Editor:
 ```yaml
