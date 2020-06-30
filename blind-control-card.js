@@ -797,24 +797,24 @@ class BlindControl extends LitElement {
           console.log(
             "Connected" + " " + this.hass.states["sensor.time"].state
           );
-          setTimeout(() => {
-            localStorage.setItem("status", "1");
+          if (
+            this.hass.states["input_text.configuration"].state == "unknown" ||
+            this.hass.states["input_text.notifications"].state == "unknown" ||
+            this.hass.states["input_text.schedule"].state == "unknown"
+          ) {
+            this._factoryReset();
+          } else {
             setTimeout(() => {
-              this.hass.callService("input_text", "set_value", {
-                value: "0",
-                entity_id: "input_text.busy",
-              });
-            }, 1500);
-            this.requestUpdate();
-          }, 3500);
-            if (
-              this.hass.states["input_text.configuration"].state == "unknown" ||
-              this.hass.states["input_text.notifications"].state == "unknown" ||
-              this.hass.states["input_text.schedule"].state == "unknown"
-            ) {
-              console.log("Tengo que factoriresetearrr");
-              this._factoryReset();
-            }
+              localStorage.setItem("status", "1");
+              setTimeout(() => {
+                this.hass.callService("input_text", "set_value", {
+                  value: "0",
+                  entity_id: "input_text.busy",
+                });
+              }, 1500);
+              this.requestUpdate();
+            }, 3500);
+          }
         } else {
           console.log(
             "Disconnected" + " " + this.hass.states["sensor.time"].state
