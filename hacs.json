@@ -1,1 +1,6 @@
-
+{
+  "name": "blind-control-card",
+  "content_in_root": true,
+  "render_readme": true,
+  "filename": "blind-control-card.js"
+}
