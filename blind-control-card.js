@@ -807,13 +807,17 @@ class BlindControl extends LitElement {
             }, 1500);
             this.requestUpdate();
           }, 3500);
-          if (
-            this.hass.states["input_text.configuration"].state == "unknown" &&
-            this.hass.states["input_text.notifications"].state == "unknown" &&
-            this.hass.states["input_text.schedule"].state == "unknown"
-          ) {
-            this._factoryReset();
-          }
+          setTimeout(() => {
+            console.log("Tengo que factoriresetearrr");
+            if (
+              this.hass.states["input_text.configuration"].state == "unknown" ||
+              this.hass.states["input_text.notifications"].state == "unknown" ||
+              this.hass.states["input_text.schedule"].state == "unknown"
+            ) {
+              console.log("Tengo que factoriresetearrr");
+              this._factoryReset();
+            }
+          }, 3000);
         } else {
           console.log(
             "Disconnected" + " " + this.hass.states["sensor.time"].state
