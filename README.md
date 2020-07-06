@@ -9,7 +9,7 @@
 ## Features:
 * Execution of simple actions: go up, go down, stop.
 * Integration of daily scheduled movements (morning and night).
-* Parameters modification: Velocity (20-50 rpm), Direction (Forward-Reverse) modification.
+* Parameters modification: Velocity (20-50 rpm) and Direction (Forward-Reverse).
 * Limits modification: Upper limit and Bottom limit.
 * Factory reset option.
 * Live battery-blind position status.
